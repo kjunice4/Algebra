@@ -575,13 +575,8 @@ class Exponents_steps(Screen):
                     i = i + 1
             
         except Exception:
-            try:
-                self.ids.list_of_steps.add_widget(Label(text= "Out Of Range" ,font_size = 50, size_hint_y= None, height=100))
-                self.layouts.append(layout)
-                    
-            except Exception:               
-                self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
-                self.layouts.append(layout)  
+            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
+            self.layouts.append(layout)  
 
 #FOIL
 Builder.load_string("""
