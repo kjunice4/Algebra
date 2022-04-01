@@ -250,20 +250,6 @@ class Domain_and_Range(Screen):
 
     def __init__(self, **kwargs):
         super(Domain_and_Range, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
-
-    def _key_handler(self, instance, key, *args):
-        if key == 27:
-            print("Its working ESC = 27 LENGTH")
-            self.set_previous_screen()
-            return True
-
-    def set_previous_screen(self):
-        print("Length is almost working")        
-        if sm.current != "Homepage":
-            print("Its working List")
-            sm.transition.direction = 'right'
-            sm.current = sm.previous()
             
     layouts = []
     def steps(self,entry):
@@ -514,17 +500,6 @@ class Exponents_steps(Screen):
 
     def __init__(self, **kwargs):
         super(Exponents_steps, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
-
-    def _key_handler(self, instance, key, *args):
-        if key == 27:
-            self.set_previous_screen()
-            return True
-
-    def set_previous_screen(self):
-        if sm.current != "Homepage":
-            sm.transition.direction = 'right'
-            sm.current = "Menu"
             
     layouts = []
     def steps(self,entry):
@@ -671,20 +646,6 @@ class FOIL(Screen):
 
     def __init__(self, **kwargs):
         super(FOIL, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
-
-    def _key_handler(self, instance, key, *args):
-        if key == 27:
-            print("Its working ESC = 27 LENGTH")
-            self.set_previous_screen()
-            return True
-
-    def set_previous_screen(self):
-        print("Length is almost working")        
-        if sm.current != "Homepage":
-            print("Its working List")
-            sm.transition.direction = 'right'
-            sm.current = "Menu"
             
     layouts = []
     def steps(self,entry):
@@ -1542,17 +1503,6 @@ class PEMDAS(Screen):
 
     def __init__(self, **kwargs):
         super(PEMDAS, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
-
-    def _key_handler(self, instance, key, *args):
-        if key == 27:
-            self.set_previous_screen()
-            return True
-
-    def set_previous_screen(self):
-        if sm.current != "Homepage":
-            sm.transition.direction = 'right'
-            sm.current = "Menu"
             
     layouts = []
     def steps(self,entry):
@@ -2219,19 +2169,6 @@ class Quadratic_Formula_Solver(Screen):
 
     def __init__(self, **kwargs):
         super(Quadratic_Formula_Solver, self).__init__(**kwargs)
-        Window.bind(on_keyboard=self._key_handler)
-
-    def _key_handler(self, instance, key, *args):
-        if key == 27:
-            print("Its working ESC = 27 LENGTH")
-            return True
-
-    def set_previous_screen(self):
-        print("Length is almost working")        
-        if sm.current != "Homepage":
-            print("Its working List")
-            sm.transition.direction = 'right'
-            sm.current = "Menu"
             
     layouts = []
     def steps(self,entry):
@@ -2356,6 +2293,15 @@ sm.current = "Homepage"
 
 
 class Algebra(App):
+    def __init__(self, **kwargs):
+        super(Algebra, self).__init__(**kwargs)
+        Window.bind(on_keyboard=self._key_handler)
+    
+    def _key_handler(self, instance, key, *args):
+        print("key:",key)
+        if key == 27:
+            sm.current = sm.current
+            return True
     def build(app):
         return sm
 
