@@ -1,5 +1,6 @@
 #Algebra Bundle
 
+
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.label import Label
@@ -11,6 +12,9 @@ import sympy as sym
 from colorama import Back, Style 
 from sympy import Limit, Symbol, S, diff, integrate
 import math
+from kivy.config import Config
+import kivy
+
 
 #Opening Page
 Builder.load_string("""
@@ -28,7 +32,7 @@ Builder.load_string("""
                 root.manager.transition.direction = "left" 
         
         Button:
-            font_size: 50
+            font_size: '20sp'
             background_color: 0, 0 , 0 , 1
             size_hint_y: None
             height: 200
@@ -38,7 +42,7 @@ Builder.load_string("""
                 root.manager.transition.direction = "left" 
         
         Button:
-            font_size: 50
+            font_size: '20sp'
             background_color: 0, 0 , 0 , 1
             size_hint_y: None
             height: 200
@@ -69,14 +73,14 @@ Builder.load_string("""
             height: self.minimum_height
             
             Label:
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
                 text: "Menu"
                 
             Label:
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -84,7 +88,7 @@ Builder.load_string("""
                 
             Button:
                 text: "Domain and Range"
-                font_size: 75
+                font_size: '20sp'
                 background_color: 0, 0 , 1 , 1
                 size_hint_y: None
                 height: 200
@@ -95,7 +99,7 @@ Builder.load_string("""
                     
             Button:
                 text: "Exponents Calculator"   
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 0, 1, 1
                 height: 200
@@ -106,7 +110,7 @@ Builder.load_string("""
             
             Button:
                 text: "FOIL Method"   
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 0, 1, 1
                 height: 200
@@ -117,7 +121,7 @@ Builder.load_string("""
             
             Button:
                 text: "PEMDAS"   
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 0, 1, 1
                 height: 200
@@ -128,7 +132,7 @@ Builder.load_string("""
             
             Button:
                 text: "Pythagorean Calculator"   
-                font_size: 75
+                font_size: '20sp'
                 background_color: 0, 0 , 1 , 1
                 size_hint_y: None
                 height: 200
@@ -139,7 +143,7 @@ Builder.load_string("""
             
             Button:
                 text: "Quadratic Calculator"   
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 0, 1, 1
                 height: 200
@@ -150,7 +154,7 @@ Builder.load_string("""
             
             Button:
                 text: "What's new?"   
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 background_color: 1, 0, 1, 1
                 height: 200
@@ -160,7 +164,7 @@ Builder.load_string("""
                     root.manager.transition.direction = "left"
             
             Button:
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -170,7 +174,7 @@ Builder.load_string("""
                     webbrowser.open('https://www.ksquaredmathematics.com/subscribe')        
             
             Label:
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -179,8 +183,8 @@ Builder.load_string("""
             Image:
                 source: 'KSquared_QR.png'
                 size_hint_y: None
-                height: 1000
-                width: 1000
+                height: 800
+                width: 800
 
                     
 """)
@@ -205,7 +209,7 @@ Builder.load_string("""
             height: self.minimum_height
             
             Label:
-                font_size: 60
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -214,7 +218,7 @@ Builder.load_string("""
             Button:
                 id: steps
                 text: "Menu"   
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 0 , 1 , 1
                 height: 200
@@ -224,14 +228,14 @@ Builder.load_string("""
                     root.manager.transition.direction = "right" 
                     
             Label:
-                font_size: 40
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
                 text: "Algebra Bundle v0.1"
                 
             Label:
-                font_size: 40
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -260,7 +264,7 @@ Builder.load_string("""
             height: self.minimum_height
             
             Label:
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -277,7 +281,7 @@ Builder.load_string("""
                 
                 Button:
                     text: "Menu"   
-                    font_size: 75
+                    font_size: '20sp'
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
@@ -289,7 +293,7 @@ Builder.load_string("""
                 Button:
                     id: steps
                     text: "Clear All"   
-                    font_size: 75
+                    font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
                     height: 200
@@ -300,7 +304,7 @@ Builder.load_string("""
                         list_of_steps.clear_widgets()            
                     
             Label:
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -311,7 +315,7 @@ Builder.load_string("""
                 text: y.text
                 multiline: False
                 hint_text: "f(x) ="
-                font_size: 75
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10
@@ -321,7 +325,7 @@ Builder.load_string("""
                 text: domain.text
                 multiline: False
                 hint_text:"Domain = min,max,sequence"
-                font_size: 75
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10  
@@ -329,7 +333,7 @@ Builder.load_string("""
             Button:
                 id: steps
                 text: "Calculate"   
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1 , 0 , 1
                 height: 200
@@ -381,8 +385,8 @@ class Domain_and_Range(Screen):
             y = entry[:amp]
             print("y:",y)
             
-            self.ids.list_of_steps.add_widget(Label(text= "y = " + y.replace(" ","").replace("y=","").replace("+"," + ").replace("-"," - ") ,font_size = 60, size_hint_y= None, height=100))
-            self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = 60, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "y = " + y.replace(" ","").replace("y=","").replace("+"," + ").replace("-"," - ") ,font_size = '15sp', size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '15sp', size_hint_y= None, height=100))
             self.layouts.append(layout)
             
             domain = entry[amp+1:]
@@ -401,9 +405,9 @@ class Domain_and_Range(Screen):
                 y = y.replace("^","**")
                 y = str(eval(y))
                 
-                self.ids.list_of_steps.add_widget(Label(text= "Domain | Range" ,font_size = 60, size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text= "x | y" ,font_size = 60, size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text= str(domain) + " | " + str(y) ,font_size = 60, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "Domain | Range" ,font_size = '15sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "x | y" ,font_size = '15sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= str(domain) + " | " + str(y) ,font_size = '15sp', size_hint_y= None, height=100))
                 self.layouts.append(layout)
                 
             elif comma_count == 1 and y.count("x") > 0:
@@ -418,8 +422,8 @@ class Domain_and_Range(Screen):
                 print("loop start")
                 print(len(empty_domain))
                 
-                self.ids.list_of_steps.add_widget(Label(text= "Domain | Range" ,font_size = 60, size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text= "x | y" ,font_size = 60, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "Domain | Range" ,font_size = '15sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "x | y" ,font_size = '15sp', size_hint_y= None, height=100))
                 self.layouts.append(layout)
                 
                 while i < len(empty_domain):
@@ -432,7 +436,7 @@ class Domain_and_Range(Screen):
                     print("y_solved",y_solved)
                     range_y.append(y_solved)
                     
-                    self.ids.list_of_steps.add_widget(Label(text= str(empty_domain[i]) + " | " + str(y_solved) ,font_size = 60, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= str(empty_domain[i]) + " | " + str(y_solved) ,font_size = '15sp', size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
                     i = i + 1
@@ -455,8 +459,8 @@ class Domain_and_Range(Screen):
                     range_y = []
                     print("loop start")
                     
-                    self.ids.list_of_steps.add_widget(Label(text= "Domain | Range" ,font_size = 60, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "x | y" ,font_size = 60, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Domain | Range" ,font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "x | y" ,font_size = '15sp', size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
                     while i < len(sequence_list):
@@ -469,7 +473,7 @@ class Domain_and_Range(Screen):
                         print("y_solved",y_solved)
                         range_y.append(y_solved)
                         
-                        self.ids.list_of_steps.add_widget(Label(text= str(sequence_list[i]) + " | " + str(y_solved) ,font_size = 60, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= str(sequence_list[i]) + " | " + str(y_solved) ,font_size = '15sp', size_hint_y= None, height=100))
                         self.layouts.append(layout)
                         
                         i = i + 1
@@ -477,15 +481,15 @@ class Domain_and_Range(Screen):
                     print("range_y",range_y)
                     
                 else:
-                    self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 60, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '15sp', size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
             else:
-                self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 60, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '15sp', size_hint_y= None, height=100))
                 self.layouts.append(layout)
                 
         except Exception:
-            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 60, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '15sp', size_hint_y= None, height=100))
             self.layouts.append(layout)
 
 #EXPONENTS STEPS
@@ -508,7 +512,7 @@ Builder.load_string("""
             height: self.minimum_height
             
             Label:
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -525,7 +529,7 @@ Builder.load_string("""
 
                 Button:
                     text: "Menu"   
-                    font_size: 75
+                    font_size: '20sp'
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
@@ -537,7 +541,7 @@ Builder.load_string("""
                 Button:
                     id: steps
                     text: "Clear All"   
-                    font_size: 75
+                    font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
                     height: 200
@@ -548,7 +552,7 @@ Builder.load_string("""
                         list_of_steps.clear_widgets()       
                         
             Label:
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -566,7 +570,7 @@ Builder.load_string("""
                     text: Base_entry.text
                     hint_text: "Base:"
                     multiline: False
-                    font_size: 125
+                    font_size: '35sp'
                     size_hint_y: None
                     height: 200
                     padding: 10
@@ -584,7 +588,7 @@ Builder.load_string("""
                     text: Power_entry.text
                     hint_text: "Power:"
                     multiline: False
-                    font_size: 125
+                    font_size: '35sp'
                     size_hint_y: None
                     height: 200
                     padding: 10              
@@ -593,7 +597,7 @@ Builder.load_string("""
             Button:
                 id: steps
                 text: "Calculate"   
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1 , 0 , 1
                 height: 200
@@ -639,11 +643,11 @@ class Exponents_steps(Screen):
             display = entry.replace("$","^")
             entry_list = entry.split("$")
             print("display :" + display)
-            self.ids.list_of_steps.add_widget(Label(text="Expression entered : " + display, font_size = 50, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text="Expression entered : " + display, font_size = '15sp', size_hint_y= None, height=100))
             Answer = str(eval(str(display).replace("^","**")))
             Answer = "{:,}".format(float(Answer.replace(",","")))
             print("Answer",Answer)
-            self.ids.list_of_steps.add_widget(Label(text="Answer: " + '[color=33CAFF]' + Answer + '[/color]', markup=True, font_size = 50, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text="Answer: " + '[color=33CAFF]' + Answer + '[/color]', markup=True, font_size = '15sp', size_hint_y= None, height=100))
             self.layouts.append(layout)
             
             entry = entry_list
@@ -657,7 +661,7 @@ class Exponents_steps(Screen):
             print("power",power)
             
             if power.find("-") < 0:
-                self.ids.list_of_steps.add_widget(Label(text="Proof of work:", font_size = 50, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text="Proof of work:", font_size = '15sp', size_hint_y= None, height=100))
                 
                 i = 0
                 product = base
@@ -666,9 +670,9 @@ class Exponents_steps(Screen):
                     length = '[color=33CAFF]' + product + '[/color]' + " * " + base
                     print("length",length)
                     if int(power) > 1:
-                        self.ids.list_of_steps.add_widget(Label(text= length ,font_size = 50, markup=True, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= length ,font_size = '15sp', markup=True, size_hint_y= None, height=100))
                     else:
-                        self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + product + '[/color]', markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= '[color=33CAFF]' + product + '[/color]', markup=True, font_size = '15sp', size_hint_y= None, height=100))
                     power = int(power) - 1
                     print("power",power)
                     product = "{:,}".format(float(product.replace(",","")) * float(base))
@@ -676,7 +680,7 @@ class Exponents_steps(Screen):
                     i = i + 1
             
         except Exception:
-            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '15sp', size_hint_y= None, height=100))
             self.layouts.append(layout)  
                 
 #FOIL
@@ -698,7 +702,7 @@ Builder.load_string("""
             height: self.minimum_height
             
             Label:
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -715,7 +719,7 @@ Builder.load_string("""
                 
                 Button:
                     text: "Menu"   
-                    font_size: 75
+                    font_size: '20sp'
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
@@ -727,7 +731,7 @@ Builder.load_string("""
                 Button:
                     id: steps
                     text: "Clear All"   
-                    font_size: 75
+                    font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
                     height: 200
@@ -741,7 +745,7 @@ Builder.load_string("""
                 text: entry.text
                 multiline: False
                 hint_text: "(ax + b)(cx + d)"
-                font_size: 125
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10
@@ -750,7 +754,7 @@ Builder.load_string("""
                 markup: True
                 id: steps
                 text: "Calculate"   
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1 , 0 , 1
                 height: 200
@@ -813,7 +817,7 @@ class FOIL(Screen):
             print("Expression entered:  ",a)
             print()
             
-            self.ids.list_of_steps.add_widget(Label(text= "Expression Entered: " + a ,font_size = 50, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "Expression Entered: " + a ,font_size = '15sp', size_hint_y= None, height=100))
             self.layouts.append(layout)
             
             x = Symbol('x')
@@ -870,7 +874,7 @@ class FOIL(Screen):
                             #print()
                             #print("First Type ",type(First))
                             FIRST_DISPLAY = "FIRST: (" + '[color=33CAFF]' + str(a_list[0]).replace("[","").replace("]","").replace("'","") + '[/color]' + str(a_list[1:3]).replace("[","").replace("]","").replace("'","").replace("+"," + ").replace("-"," - ").replace(",","") + ")(" + '[color=33CAFF]' + str(a_list[3]).replace("[","").replace("]","").replace("'","") + '[/color]' + str(a_list[4:]).replace("[","").replace("]","").replace("'","").replace("+"," + ").replace("-"," - ").replace(",","") + ")"
-                            self.ids.list_of_steps.add_widget(Label(text= FIRST_DISPLAY , markup=True, font_size = 50, size_hint_y= None, height=100))
+                            self.ids.list_of_steps.add_widget(Label(text= FIRST_DISPLAY , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                             print('FIRST                ',"(" + Back.GREEN + str(a_list[0]).replace("[","").replace("]","").replace("'","") + Style.RESET_ALL + str(a_list[1:3]).replace("[","").replace("]","").replace("'","").replace("+"," + ").replace("-"," - ").replace(",","") + ")(" + Back.GREEN + str(a_list[3]).replace("[","").replace("]","").replace("'","") + Style.RESET_ALL + str(a_list[4:]).replace("[","").replace("]","").replace("'","").replace("+"," + ").replace("-"," - ").replace(",","") + ")")         #print("First Type ",type(First))
                             print()
                             First = First_left + " * " + First_right
@@ -884,7 +888,7 @@ class FOIL(Screen):
                             First = str(First).replace("**","^").replace("*-"," * -")
                             
                             FIRST_MULTIPLY = "Multiply: " + First.replace("*x","x").replace("**","^").replace("*"," * ") + " = " + '[color=33CAFF]' + First_evaled.replace("*x","x").replace("**","^") + '[/color]'
-                            self.ids.list_of_steps.add_widget(Label(text= FIRST_MULTIPLY , markup=True, font_size = 50, size_hint_y= None, height=100))
+                            self.ids.list_of_steps.add_widget(Label(text= FIRST_MULTIPLY , markup=True, font_size = '15sp', size_hint_y= None, height=100))
 
                             print("Multiply:            ", First.replace("*x","x").replace("**","^").replace("*"," * ")," = ",Back.GREEN,First_evaled,Style.RESET_ALL)   
                             print()
@@ -893,10 +897,10 @@ class FOIL(Screen):
                             print('Expression:          ',Back.BLUE,highlight_first,Style.RESET_ALL)
                             
                             FIRST_EXPRESSION = 'Expression: ' + '[color=33CAFF]' + highlight_first + "[/color]"
-                            self.ids.list_of_steps.add_widget(Label(text= FIRST_EXPRESSION , markup=True, font_size = 50, size_hint_y= None, height=100))
+                            self.ids.list_of_steps.add_widget(Label(text= FIRST_EXPRESSION , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                             
                             print()
-                            self.ids.list_of_steps.add_widget(Label(text= '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' , markup=True, font_size = 50, size_hint_y= None, height=100))
+                            self.ids.list_of_steps.add_widget(Label(text= '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                             print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~') 
                             print()
                             
@@ -925,7 +929,7 @@ class FOIL(Screen):
                         First = First_left + " * " + First_right
                         print('FIRST                ',"(" + Back.GREEN + str(a_list[0]).replace("[","").replace("]","").replace("'","") + Style.RESET_ALL + str(a_list[1:3]).replace("[","").replace("]","").replace("'","").replace("+"," + ").replace("-"," - ").replace(",","") + ")(" + Back.GREEN + str(a_list[3]).replace("[","").replace("]","").replace("'","") + Style.RESET_ALL + str(a_list[4:]).replace("[","").replace("]","").replace("'","").replace("+"," + ").replace("-"," - ").replace(",","") + ")")         #print("First Type ",type(First))
                         FIRST_DISPLAY = "FIRST: (" + '[color=33CAFF]' + str(a_list[0]).replace("[","").replace("]","").replace("'","") + '[/color]' + str(a_list[1:3]).replace("[","").replace("]","").replace("'","").replace("+"," + ").replace("-"," - ").replace(",","") + ")(" + '[color=33CAFF]' + str(a_list[3]).replace("[","").replace("]","").replace("'","") + '[/color]' + str(a_list[4:]).replace("[","").replace("]","").replace("'","").replace("+"," + ").replace("-"," - ").replace(",","") + ")"
-                        self.ids.list_of_steps.add_widget(Label(text= FIRST_DISPLAY , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= FIRST_DISPLAY , markup=True, font_size = '15sp', size_hint_y= None, height=100))
 
                         #print('type',type(First))
                         First = str(First).replace(" ","").replace("+-","-").replace('--',"+").replace("-+","-").replace("^","**")
@@ -936,7 +940,7 @@ class FOIL(Screen):
                         First_evaled = First_evaled.replace("**","^")
                         
                         FIRST_MULTIPLY = "Multiply: " + First.replace("*x","x").replace("**","^").replace("*"," * ") + " = " + '[color=33CAFF]' + First_evaled.replace("*x","x").replace("**","^") + '[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= FIRST_MULTIPLY , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= FIRST_MULTIPLY , markup=True, font_size = '15sp', size_hint_y= None, height=100))
 
                         print("Multiply:            ", First.replace("*x","x").replace("**","^").replace("*"," * ")," = ",Back.GREEN,First_evaled,Style.RESET_ALL)  
                         print()
@@ -946,8 +950,8 @@ class FOIL(Screen):
                         print('Expression:          ',Back.BLUE,highlight_first,Style.RESET_ALL)
                         
                         FIRST_EXPRESSION = 'Expression: ' + '[color=33CAFF]' + highlight_first + "[/color]"
-                        self.ids.list_of_steps.add_widget(Label(text= FIRST_EXPRESSION , markup=True, font_size = 50, size_hint_y= None, height=100))
-                        self.ids.list_of_steps.add_widget(Label(text= '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= FIRST_EXPRESSION , markup=True, font_size = '15sp', size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         
                         print()
                         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
@@ -976,7 +980,7 @@ class FOIL(Screen):
                     print('OUTSIDE              ',"(" + Back.GREEN + str(a_list[0]).replace("[","").replace("]","").replace("'","") + Style.RESET_ALL + str(a_list[1:3]).replace("[","").replace("]","").replace("'","").replace("+"," + ").replace("-"," - ").replace(",","") + ")(" + str(a_list[3]).replace("[","").replace("]","").replace("'","") + Back.GREEN + str(a_list[4:]).replace("[","").replace("]","").replace("'","").replace("+"," + ").replace("-"," - ").replace(",","") + Style.RESET_ALL + ")")         #print("First Type ",type(First))
                     
                     OUTSIDE_DISPLAY = "OUTSIDE: (" + '[color=33CAFF]' + str(a_list[0]).replace("[","").replace("]","").replace("'","") + '[/color]' + str(a_list[1:3]).replace("[","").replace("]","").replace("'","").replace("+"," + ").replace("-"," - ").replace(",","") + ")(" + str(a_list[3]).replace("[","").replace("]","").replace("'","") + '[color=33CAFF]' + str(a_list[4:]).replace("[","").replace("]","").replace("'","").replace("+"," + ").replace("-"," - ").replace(",","") + '[/color]' + ")"
-                    self.ids.list_of_steps.add_widget(Label(text= OUTSIDE_DISPLAY , markup=True, font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= OUTSIDE_DISPLAY , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                     
                     evaled_Outside = str(Outside).replace("^","**")
                     evaled_Outside = eval(evaled_Outside)
@@ -986,7 +990,7 @@ class FOIL(Screen):
                     print("Multiply:            ",Outside.replace("**","^").replace("*x","x")," = ",Back.GREEN,evaled_Outside,Style.RESET_ALL)
                     
                     OUTSIDE_MULTIPLY = "Multiply: " + Outside.replace("**","^").replace("*x","x") + " = " + '[color=33CAFF]' + evaled_Outside + '[/color]'
-                    self.ids.list_of_steps.add_widget(Label(text= OUTSIDE_MULTIPLY , markup=True, font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= OUTSIDE_MULTIPLY , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                     
                     #print()
                     #print('evaled_Outside',evaled_Outside)
@@ -999,8 +1003,8 @@ class FOIL(Screen):
                     print("Expression:          ",Back.BLUE,highlight_first,Style.RESET_ALL,Back.GREEN,highlight_Outside,Style.RESET_ALL)
                     
                     OUTSIDE_HIGHLIGHT = "Expression: " + '[color=33CAFF]'  + highlight_first + highlight_Outside + '[/color]'
-                    self.ids.list_of_steps.add_widget(Label(text= OUTSIDE_HIGHLIGHT , markup=True, font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' , markup=True, font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= OUTSIDE_HIGHLIGHT , markup=True, font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                     
                     print()
                     print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
@@ -1030,7 +1034,7 @@ class FOIL(Screen):
                     print('INSIDE               ',"(" + str(a_list[0]).replace("[","").replace("]","").replace("'","") + Back.GREEN + str(a_list[1:3]).replace("[","").replace("]","").replace("'","").replace("+"," + ").replace("-"," - ").replace(",","") + Style.RESET_ALL + ")(" + Back.GREEN + str(a_list[3]).replace("[","").replace("]","").replace("'","") + Style.RESET_ALL + str(a_list[4:]).replace("[","").replace("]","").replace("'","").replace("+"," + ").replace("-"," - ").replace(",","") + Style.RESET_ALL + ")")         #print("First Type ",type(First))
                     
                     INSIDE_DISPLAY = "INSIDE (" + str(a_list[0]).replace("[","").replace("]","").replace("'","") + '[color=33CAFF]' + str(a_list[1:3]).replace("[","").replace("]","").replace("'","").replace("+"," + ").replace("-"," - ").replace(",","") + '[/color]' + ")(" + '[color=33CAFF]' + str(a_list[3]).replace("[","").replace("]","").replace("'","") + '[/color]' + str(a_list[4:]).replace("[","").replace("]","").replace("'","").replace("+"," + ").replace("-"," - ").replace(",","") + '[/color]' + ")"
-                    self.ids.list_of_steps.add_widget(Label(text= INSIDE_DISPLAY , markup=True, font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= INSIDE_DISPLAY , markup=True, font_size = '15sp', size_hint_y= None, height=100))
 
                     Inside =  INSIDE_left + " * " + First_right
                     Inside = Inside.replace("^","**")
@@ -1045,7 +1049,7 @@ class FOIL(Screen):
                     print()
                     
                     INSIDE_MULTIPLY = "Multiply: " + Inside.replace("*x","x").replace("**","^") + " = " + '[color=33CAFF]' + Inside_evaled + '[/color]'
-                    self.ids.list_of_steps.add_widget(Label(text= INSIDE_MULTIPLY , markup=True, font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= INSIDE_MULTIPLY , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                     
                     #print("Inside_evaled",Inside_evaled)
                     highlight_Inside = Inside_evaled.replace("*","").replace(" ","")
@@ -1055,8 +1059,8 @@ class FOIL(Screen):
                     print("Expression:         ",Back.BLUE,highlight_first,highlight_Outside,Style.RESET_ALL,Back.GREEN,highlight_Inside,Style.RESET_ALL)
                     
                     INSIDE_HIGHLIGHT = "Expression: " + '[color=33CAFF]' + highlight_first + highlight_Outside + highlight_Inside + '[/color]'
-                    self.ids.list_of_steps.add_widget(Label(text= INSIDE_HIGHLIGHT , markup=True, font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' , markup=True, font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= INSIDE_HIGHLIGHT , markup=True, font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                     print()
                     print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
                     print()
@@ -1069,7 +1073,7 @@ class FOIL(Screen):
                     print()
                     
                     LAST_DISPLAY = "LAST: (" + str(a_list[0]).replace("[","").replace("]","").replace("'","") + '[color=33CAFF]' + str(a_list[1:3]).replace("[","").replace("]","").replace("'","").replace("+"," + ").replace("-"," - ").replace(",","") + '[/color]' + ")(" + str(a_list[3]).replace("[","").replace("]","").replace("'","") + '[color=33CAFF]' + str(a_list[4:]).replace("[","").replace("]","").replace("'","").replace("+"," + ").replace("-"," - ").replace(",","") + '[/color]' + ")"
-                    self.ids.list_of_steps.add_widget(Label(text= LAST_DISPLAY , markup=True, font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= LAST_DISPLAY , markup=True, font_size = '15sp', size_hint_y= None, height=100))
 
                     Last = INSIDE_left + " * " + Outside_right 
                     Last = Last.replace("^","**")
@@ -1083,7 +1087,7 @@ class FOIL(Screen):
                     #print('Last_evaled',Last_evaled)
                     
                     LAST_MULTIPLY = "Multiply: " + Last.replace("*x","x").replace("**","^") + " = " + '[color=33CAFF]' + Last_evaled + '[/color]'
-                    self.ids.list_of_steps.add_widget(Label(text= LAST_MULTIPLY , markup=True, font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= LAST_MULTIPLY , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                     
                     highlight_Last = Last_evaled.replace("*","")#.replace("-","- ")
             
@@ -1092,8 +1096,8 @@ class FOIL(Screen):
             
                     print("Expression:         ",Back.BLUE,highlight_first,highlight_Outside,highlight_Inside,Style.RESET_ALL,Back.GREEN,highlight_Last,Style.RESET_ALL)
                     LAST_EXPRESSION = "Expression: " + '[color=33CAFF]' + highlight_first + highlight_Outside + highlight_Inside + highlight_Last + '[/color]'
-                    self.ids.list_of_steps.add_widget(Label(text= LAST_EXPRESSION , markup=True, font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' , markup=True, font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= LAST_EXPRESSION , markup=True, font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                     print()
                     print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
                     print()        
@@ -1103,13 +1107,13 @@ class FOIL(Screen):
                 FOIL = FOIL.strip().replace("**","^").replace(" ","").replace("+-","-").replace("+"," + ").replace("-"," - ").replace("*","")
                 print("Expression FOILed:  ",Back.BLUE,FOIL,Style.RESET_ALL)
                 EXPRESSION_FOLIED = '[color=33CAFF]' + FOIL + '[/color]'
-                self.ids.list_of_steps.add_widget(Label(text= "Expression FOILed:  ", markup=True, font_size = 50, size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text= EXPRESSION_FOLIED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "Expression FOILed:  ", markup=True, font_size = '15sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= EXPRESSION_FOLIED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                 print()
-                self.ids.list_of_steps.add_widget(Label(text= "Next, combine like terms" , markup=True, font_size = 50, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "Next, combine like terms" , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                 print("Next, combine like terms")
                 print()
-                self.ids.list_of_steps.add_widget(Label(text= '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' , markup=True, font_size = 50, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                 print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
                 print()  
                 
@@ -1192,11 +1196,11 @@ class FOIL(Screen):
                     if exponent_First_evaled != " " and exponent_evaled_Outside  != " " and exponent_Inside_evaled != " " and exponent_Last_evaled != " ":
                         print("1Combine terms:      ",Back.BLUE,First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + "),evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- "),Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- "),Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- "),Style.RESET_ALL)
                         COMBINE_TERMS = "Combine terms: " + '[color=33CAFF]' + First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ") + evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ") + Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ") + Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ") + '[/color]' 
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         print("Terms Combined:     ",Back.BLUE,str(eval(exponent_First_evaled + exponent_evaled_Outside + exponent_Inside_evaled + exponent_Last_evaled)).replace("*","").replace("**","^"),Style.RESET_ALL)
                         COMBINED_TERMS_EVALED = "Terms Combined: " + '[color=33CAFF]' + str(eval(exponent_First_evaled + exponent_evaled_Outside + exponent_Inside_evaled + exponent_Last_evaled)).replace("**","^").replace("**","^") + '[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         non_combine = non_combine - 1
                         break
@@ -1208,11 +1212,11 @@ class FOIL(Screen):
                         if exponent_First_evaled[-1] == exponent_evaled_Outside[-1]:
                             print("2Combine terms:      ",Back.BLUE,First_evaled.replace(" ","").replace("**","^").replace("*",""),evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- "),Style.RESET_ALL,Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- "),Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- "))
                             COMBINE_TERMS = "Combine terms: " + '[color=33CAFF]' + First_evaled.replace(" ","").replace("**","^").replace("*",""),evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ") + '[/color]' + Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ") + Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")
-                            self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                            self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                             print()
                             print("Terms Combined:     ",Back.BLUE,str(eval(exponent_First_evaled +" + "+ exponent_evaled_Outside)).replace("**","^").replace("*"," "),Style.RESET_ALL)
                             COMBINED_TERMS_EVALED = "Terms Combined: " + '[color=33CAFF]' + str(eval(exponent_First_evaled +" + "+ exponent_evaled_Outside)).replace("**","^").replace("*"," ") + '[/color]'
-                            self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                            self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                             print()
                             non_combine = non_combine - 1
                     if exponent_First_evaled != " " and exponent_Inside_evaled  != " ":
@@ -1223,11 +1227,11 @@ class FOIL(Screen):
                         if exponent_First_evaled[-1] == exponent_Inside_evaled[-1]:
                             print("3Combine terms: "+Back.BLUE+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+Style.RESET_ALL+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Back.BLUE+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- "))
                             COMBINE_TERMS = "Combine terms: "+ '[color=33CAFF]' + First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ") + '[/color]' + evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ") + '[color=33CAFF]' + Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ") + '[/color]' + Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")
-                            self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                            self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                             print()
                             print("Terms Combined:     "+Back.BLUE+str(eval(exponent_First_evaled +" + "+ exponent_Inside_evaled)).replace("*","").replace("**","^")+Style.RESET_ALL)
                             COMBINED_TERMS_EVALED = "Terms Combined: " + '[color=33CAFF]' + str(eval(exponent_First_evaled +" + "+ exponent_evaled_Outside)).replace("**","^").replace("*"," ") + '[/color]'
-                            self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                            self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                             print()
                             non_combine = non_combine - 1
                     if exponent_First_evaled != " " and exponent_Last_evaled  != " ":
@@ -1238,11 +1242,11 @@ class FOIL(Screen):
                         if exponent_First_evaled[-1] == exponent_Last_evaled[-1]:
                             print("4Combine terms: "+Back.BLUE+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+Style.RESET_ALL+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Back.BLUE+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL)
                             COMBINE_TERMS = "Combine terms: " + '[color=33CAFF]' + First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ") + '[/color]' + evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ") + '[/color]' + Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ") + '[/color]'
-                            self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                            self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                             print()
                             print("Terms Combined:     "+Back.BLUE+str(eval(exponent_First_evaled +" + "+ exponent_Last_evaled)).replace("*","").replace("**","^")+Style.RESET_ALL)
                             COMBINED_TERMS_EVALED = "Terms Combined: " + '[color=33CAFF]' + str(eval(exponent_First_evaled +" + "+ exponent_evaled_Outside)).replace("**","^").replace("*"," ") + '[/color]'
-                            self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                            self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                             print()
                             non_combine = non_combine - 1
                     if exponent_evaled_Outside != " " and exponent_Inside_evaled  != " ":
@@ -1253,11 +1257,11 @@ class FOIL(Screen):
                         if exponent_First_evaled[-1] == exponent_Last_evaled[-1]:
                             print("5Combine terms: "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+Back.BLUE+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- "))
                             COMBINE_TERMS = "Combine terms: "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+ '[color=33CAFF]' +evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+ '[/color]' +Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")
-                            self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                            self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                             print()
                             print("Terms Combined:     "+Back.BLUE+str(eval(exponent_evaled_Outside +" + "+ exponent_Inside_evaled)).replace("*","").replace("**","^")+Style.RESET_ALL)
                             COMBINED_TERMS_EVALED = "Terms Combined: "+ '[color=33CAFF]' +str(eval(exponent_evaled_Outside +" + "+ exponent_Inside_evaled)).replace("*","").replace("**","^")+'[/color]'
-                            self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                            self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                             print()
                             non_combine = non_combine - 1
                     if exponent_evaled_Outside != " " and exponent_Last_evaled != " ":
@@ -1268,11 +1272,11 @@ class FOIL(Screen):
                         if exponent_First_evaled[-1] == exponent_Last_evaled[-1]:
                             print("6Combine terms: "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+Back.BLUE+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Back.BLUE+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL)
                             COMBINE_TERMS = "Combine terms: "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+ '[color=33CAFF]' +evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+ '[/color]' +Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ") + '[color=33CAFF]' + Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ") + '[/color]'
-                            self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                            self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                             print()
                             print("Terms Combined:     "+Back.BLUE+str(eval(exponent_evaled_Outside +" + "+ exponent_Last_evaled)).replace("*","").replace("**","^")+Style.RESET_ALL)
                             COMBINED_TERMS_EVALED = "Terms Combined: "+ '[color=33CAFF]' +str(eval(exponent_evaled_Outside +" + "+ exponent_Last_evaled)).replace("*","").replace("**","^")+ '[/color]'
-                            self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                            self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                             print()
                             non_combine = non_combine - 1
                     if exponent_Inside_evaled != " " and exponent_Last_evaled != " ":
@@ -1283,11 +1287,11 @@ class FOIL(Screen):
                         if exponent_First_evaled[-1] == exponent_Last_evaled[-1]:
                             print("7Combine terms: "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Back.BLUE+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL)        
                             COMBINE_TERMS = "Combine terms: "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[color=33CAFF]'+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[/color]'
-                            self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                            self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                             print()
                             print("Terms Combined:     "+Back.BLUE+str(eval(exponent_Inside_evaled +" + "+ exponent_Last_evaled)).replace("*","").replace("**","^")+Style.RESET_ALL)
                             COMBINED_TERMS_EVALED = "Terms Combined: "+'[color=33CAFF]' + str(eval(exponent_Inside_evaled +" + "+ exponent_Last_evaled)).replace("*","").replace("**","^")+ '[/color]'
-                            self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                            self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                             print()
                             non_combine = non_combine - 1
                     non_combine = non_combine + 1
@@ -1310,11 +1314,11 @@ class FOIL(Screen):
                     if variable_First_evaled != " " and variable_Outside_evaled  != " " and variable_Inside_evaled != " " and variable_Last_evaled != " ":
                         print("Combine terms:      "+Back.BLUE+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL)
                         COMBINE_TERMS = "Combine terms: "+'[color=33CAFF]'+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+ '[/color]' 
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         print("Terms Combined:     "+Back.BLUE+str(eval(variable_First_evaled +" + "+ variable_Outside_evaled +" + "+ variable_Inside_evaled +" + "+ variable_Last_evaled)).replace("*","").replace("**","^")+Style.RESET_ALL)
                         COMBINED_TERMS_EVALED = "Terms Combined: "+'[color=33CAFF]'+str(eval(variable_First_evaled +" + "+ variable_Outside_evaled +" + "+ variable_Inside_evaled +" + "+ variable_Last_evaled)).replace("*","").replace("**","^")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         non_combine = non_combine - 1
                         break
@@ -1322,66 +1326,66 @@ class FOIL(Screen):
                         print()
                         print("Combine terms:      "+Back.BLUE+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- "))
                         COMBINE_TERMS = "Combine terms: "+'[color=33CAFF]'+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[/color]'+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         print("Terms Combined:     "+Back.BLUE+str(eval(variable_First_evaled +" + "+ variable_Outside_evaled)).replace("*","")+Style.RESET_ALL)
                         COMBINED_TERMS_EVALED = "Terms Combined: "+'[color=33CAFF]'+str(eval(variable_First_evaled +" + "+ variable_Outside_evaled)).replace("*","")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         non_combine = non_combine - 1
                     if variable_First_evaled != " " and variable_Inside_evaled != " " :
                         print()
                         print("Combine terms:      "+Back.BLUE+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+Style.RESET_ALL+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Back.BLUE+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- "))
                         COMBINE_TERMS = "Combine terms: "+'[color=33CAFF]'+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+'[/color]'+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[color=33CAFF]'+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[/color]'+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         print("Terms Combined:     "+Back.BLUE+str(eval(variable_First_evaled +" + "+ variable_Inside_evaled)).replace("*","")+Style.RESET_ALL)
                         COMBINED_TERMS_EVALED = "Terms Combined: "+'[color=33CAFF]'+str(eval(variable_First_evaled +" + "+ variable_Inside_evaled)).replace("*","")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         non_combine = non_combine - 1
                     if variable_First_evaled != " " and variable_Last_evaled != " " :
                         print()
                         print("Combine terms:      "+Back.BLUE+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+Style.RESET_ALL+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Back.BLUE+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL)
                         COMBINE_TERMS = "Combine terms: "+'[color=33CAFF]'+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+'[/color]'+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[color=33CAFF]'+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         print("Terms Combined:     "+Back.BLUE+str(eval(variable_First_evaled +" + "+ variable_Last_evaled)).replace("*","")+Style.RESET_ALL)
                         COMBINED_TERMS_EVALED = "Terms Combined: "+'[color=33CAFF]'+str(eval(variable_First_evaled +" + "+ variable_Last_evaled)).replace("*","")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         non_combine = non_combine - 1
                     if variable_Outside_evaled != " " and variable_Inside_evaled != " " :
                         print()
                         print("Combine terms:      "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+Back.BLUE+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- "))
                         COMBINE_TERMS = "Combine terms: "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+'[color=33CAFF]'+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[/color]'+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         print("Terms Combined:     "+Back.BLUE+str(eval(variable_Outside_evaled +" + "+ variable_Inside_evaled)).replace("*","")+Style.RESET_ALL)
                         COMBINED_TERMS_EVALED = "Terms Combined: "+'[color=33CAFF]'+str(eval(variable_Outside_evaled +" + "+ variable_Inside_evaled)).replace("*","")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         non_combine = non_combine - 1
                     if variable_Outside_evaled != " " and variable_Last_evaled != " " :
                         print()
                         print("Combine terms:      "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+Back.BLUE+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Back.BLUE+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL)
                         COMBINE_TERMS = "Combine terms: "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+'[color=33CAFF]'+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[/color]'+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[color=33CAFF]'+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         print("Terms Combined:     "+Back.BLUE+str(eval(variable_Outside_evaled +" + "+ variable_Last_evaled)).replace("*","")+Style.RESET_ALL)
                         COMBINED_TERMS_EVALED = "Terms Combined: "+'[color=33CAFF]'+str(eval(variable_Outside_evaled +" + "+ variable_Inside_evaled)).replace("*","")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         non_combine = non_combine - 1
                     if variable_Inside_evaled != " " and variable_Last_evaled != " " :
                         print()
                         print("Combine terms:      "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Back.BLUE+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL)
                         COMBINE_TERMS = "Combine terms: "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+'[color=33CAFF]'+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[/color]'+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[color=33CAFF]'+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         print("Terms Combined:     "+Back.BLUE+str(eval(variable_Inside_evaled +" + "+ variable_Last_evaled)).replace("*","")+Style.RESET_ALL)
                         COMBINED_TERMS_EVALED = "Terms Combined: "+'[color=33CAFF]'+str(eval(variable_Inside_evaled +" + "+ variable_Last_evaled)).replace("*","")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         non_combine = non_combine - 1
                         break
@@ -1407,11 +1411,11 @@ class FOIL(Screen):
                         print("FOIL")
                         print("Combine terms:      "+Back.BLUE+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL)
                         COMBINE_TERMS = "Combine terms: "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+'[color=33CAFF]'+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[/color]'+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[color=33CAFF]'+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         print("Terms Combined:     "+Back.BLUE+str(eval(integer_First_evaled +" + "+ integer_evaled_Outside +" + "+ integer_Inside_evaled +" + "+ integer_Last_evaled)).replace("*","").replace("**","^")+Style.RESET_ALL)
                         COMBINED_TERMS_EVALED = "Terms Combined: "+'[color=33CAFF]'+str(eval(integer_First_evaled +" + "+ integer_evaled_Outside +" + "+ integer_Inside_evaled +" + "+ integer_Last_evaled)).replace("*","").replace("**","^")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         non_combine = non_combine - 1
                         break
@@ -1420,11 +1424,11 @@ class FOIL(Screen):
                         print("FO")
                         print("Combine terms:      "+Back.BLUE+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- "))
                         COMBINE_TERMS = "Combine terms: "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+'[color=33CAFF]'+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[/color]'+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[color=33CAFF]'+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         print("Terms Combined:     "+Back.BLUE+str(eval(integer_First_evaled +" + "+ integer_evaled_Outside)).replace("*","")+Style.RESET_ALL)
                         COMBINED_TERMS_EVALED = "Terms Combined: "+'[color=33CAFF]'+str(eval(integer_First_evaled +" + "+ integer_evaled_Outside)).replace("*","")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         non_combine = non_combine - 1
                     if integer_First_evaled != " " and integer_Inside_evaled != " " :
@@ -1432,11 +1436,11 @@ class FOIL(Screen):
                         print("FI")
                         print("Combine terms:      "+Back.BLUE+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+Style.RESET_ALL+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Back.BLUE+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- "))
                         COMBINE_TERMS = "Combine terms: "+'[color=33CAFF]'+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+'[/color]'+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[color=33CAFF]'+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[/color]'+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         print("Terms Combined:     "+Back.BLUE+str(eval(integer_First_evaled +" + "+ integer_Inside_evaled)).replace("*","")+Style.RESET_ALL)
                         COMBINED_TERMS_EVALED = "Terms Combined: "+'[color=33CAFF]'+str(eval(integer_First_evaled +" + "+ integer_Inside_evaled)).replace("*","")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         non_combine = non_combine - 1
                     if integer_First_evaled != " " and integer_Last_evaled != " " :
@@ -1444,11 +1448,11 @@ class FOIL(Screen):
                         print("FL")
                         print("Combine terms:      "+Back.BLUE+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+Style.RESET_ALL+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Back.BLUE+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL)
                         COMBINE_TERMS = "Combine terms: "+'[color=33CAFF]'+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+'[/color]'+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[color=33CAFF]'+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[/color]'+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         print("Terms Combined:     "+Back.BLUE+str(eval(integer_First_evaled +" + "+ integer_Last_evaled)).replace("*","")+Style.RESET_ALL)
                         COMBINED_TERMS_EVALED = "Terms Combined: "+'[color=33CAFF]'+str(eval(integer_First_evaled +" + "+ integer_Last_evaled)).replace("*","")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         non_combine = non_combine - 1
                     if integer_evaled_Outside != " " and integer_Inside_evaled != " " :
@@ -1456,11 +1460,11 @@ class FOIL(Screen):
                         print("OI")
                         print("Combine terms:      "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+Back.BLUE+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- "))
                         COMBINE_TERMS = "Combine terms: "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+'[color=33CAFF]'+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[/color]'+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         print("Terms Combined:     "+Back.BLUE+str(eval(integer_evaled_Outside +" + "+ integer_Inside_evaled)).replace("*","")+Style.RESET_ALL)
                         COMBINED_TERMS_EVALED = "Terms Combined: "+'[color=33CAFF]'+str(eval(integer_evaled_Outside +" + "+ integer_Inside_evaled)).replace("*","")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         non_combine = non_combine - 1
                     if integer_evaled_Outside != " " and integer_Last_evaled != " " :
@@ -1468,11 +1472,11 @@ class FOIL(Screen):
                         print("OL")
                         print("Combine terms:      "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+Back.BLUE+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Back.BLUE+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL)
                         COMBINE_TERMS = "Combine terms: "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+'[color=33CAFF]'+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[/color]'+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[color=33CAFF]'+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         print("Terms Combined:     "+Back.BLUE+str(eval(integer_evaled_Outside +" + "+ integer_Last_evaled)).replace("*","")+Style.RESET_ALL)
                         COMBINED_TERMS_EVALED = "Terms Combined: "+'[color=33CAFF]'+str(eval(integer_evaled_Outside +" + "+ integer_Inside_evaled)).replace("*","")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         non_combine = non_combine - 1
                     if integer_Inside_evaled != " " and integer_Last_evaled != " " :
@@ -1480,11 +1484,11 @@ class FOIL(Screen):
                         print("IL")
                         print("Combine terms:      "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Back.BLUE+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Style.RESET_ALL)        
                         COMBINE_TERMS = "Combine terms: "+First_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ")+evaled_Outside.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[color=33CAFF]'+Inside_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+Last_evaled.replace(" ","").replace("**","^").replace("*","").replace("+"," + ").replace("-","- ")+'[/color]'  
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINE_TERMS , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         print("Terms Combined:     "+Back.BLUE+str(eval(integer_Inside_evaled +" + "+ integer_Last_evaled)).replace("*"+"")+Style.RESET_ALL)
                         COMBINED_TERMS_EVALED = "Terms Combined: "+'[color=33CAFF]'+str(eval(integer_Inside_evaled +" + "+ integer_Last_evaled)).replace("*","")+'[/color]'
-                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= COMBINED_TERMS_EVALED , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                         print()
                         non_combine = non_combine - 1
                     non_combine = non_combine + 1
@@ -1492,7 +1496,7 @@ class FOIL(Screen):
                 
                 if non_combine == 3:
                     print("No terms to combine")
-                    self.ids.list_of_steps.add_widget(Label(text= "No terms to combine" , markup=True, font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "No terms to combine" , markup=True, font_size = '15sp', size_hint_y= None, height=100))
                     
                 exponents_evaled_list = [exponent_First_evaled,exponent_evaled_Outside,exponent_Inside_evaled,exponent_Last_evaled]
                 #print("exponents_evaled_list",exponents_evaled_list)
@@ -1539,14 +1543,14 @@ class FOIL(Screen):
                 print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
                 print()
                 print("Answer in order:    ",FINAL_ANSWER)
-                self.ids.list_of_steps.add_widget(Label(text= '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' ,font_size = 50, size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text= "Final Answer: " + FINAL_ANSWER.replace("*","") ,font_size = 50, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' ,font_size = '15sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "Final Answer: " + FINAL_ANSWER.replace("*","") ,font_size = '15sp', size_hint_y= None, height=100))
                 
             else:
                 print("Parentheses Unbalanced")
             
         except Exception:
-            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '15sp', size_hint_y= None, height=100))
             self.layouts.append(layout)
 
 #PEMDAS
@@ -1569,7 +1573,7 @@ Builder.load_string("""
             height: self.minimum_height
             
             Label:
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -1587,7 +1591,7 @@ Builder.load_string("""
                 Button:
                     id: steps
                     text: "Menu"   
-                    font_size: 75
+                    font_size: '20sp'
                     size_hint_y: None
                     background_color: 0, 0 , 1 , 1
                     height: 200
@@ -1599,7 +1603,7 @@ Builder.load_string("""
                 Button:
                     id: steps
                     text: "Clear All"   
-                    font_size: 75
+                    font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
                     height: 200
@@ -1613,7 +1617,7 @@ Builder.load_string("""
                 text: entry.text
                 hint_text: "Enter expression:"
                 multiline: False
-                font_size: 100
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10
@@ -1621,7 +1625,7 @@ Builder.load_string("""
             Button:
                 id: steps
                 text: "Calculate"   
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1 , 0 , 1
                 height: 200
@@ -1701,9 +1705,9 @@ class PEMDAS(Screen):
             print()
             print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             
-            self.ids.list_of_steps.add_widget(Label(text="Expression entered : ", font_size = 50, size_hint_y= None, height=100))
-            self.ids.list_of_steps.add_widget(Label(text= entry, font_size = 50, size_hint_y= None, height=100))
-            self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = 50, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text="Expression entered : ", font_size = '15sp', size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= entry, font_size = '15sp', size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = '15sp', size_hint_y= None, height=100))
             self.layouts.append(layout)
             
             #String Method to look for Parentheses
@@ -1728,16 +1732,16 @@ class PEMDAS(Screen):
                     print()
                     print()
                     print("Parentheses to Solve :    ",a[:left_par],Back.GREEN,range_pars,Style.RESET_ALL,a[right_par+1:])
-                    self.ids.list_of_steps.add_widget(Label(text="Parentheses Step : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:left_par] + '[color=33CAFF]' + range_pars + '[/color]' + a[right_par+1:],markup=True, font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text="Parentheses Step : " , font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:left_par] + '[color=33CAFF]' + range_pars + '[/color]' + a[right_par+1:],markup=True, font_size = '15sp', size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
                     replaced = a.replace(range_pars,evaled)
                     print()
                     print("Parentheses Solved :      ",a[:left_par],Back.GREEN,evaled,Style.RESET_ALL,a[right_par+1:])
-                    self.ids.list_of_steps.add_widget(Label(text="Parentheses Solved : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:left_par] + '[color=33CAFF]' + evaled + '[/color]' + a[right_par+1:],markup=True, font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text="Parentheses Solved : " , font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:left_par] + '[color=33CAFF]' + evaled + '[/color]' + a[right_par+1:],markup=True, font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = '15sp', size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
                     print("replaced to a:",replaced)
@@ -1817,15 +1821,15 @@ class PEMDAS(Screen):
                     print()
                     
                     print("Exponent to Solve :       ",a[:exp_left_space],Back.GREEN,exponent_range,Style.RESET_ALL,a[carrot + exp_right_space+1:])
-                    self.ids.list_of_steps.add_widget(Label(text="Exponent Step : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:exp_left_space] + '[color=33CAFF]' + exponent_range + '[/color]' + a[carrot + exp_right_space+1:],markup=True, font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text="Exponent Step : " , font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:exp_left_space] + '[color=33CAFF]' + exponent_range + '[/color]' + a[carrot + exp_right_space+1:],markup=True, font_size = '15sp', size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
                     print()
                     print("Exponent Sovled :         ",a[:exp_left_space],Back.GREEN,evaled,Style.RESET_ALL,a[carrot+exp_right_space+1:])
-                    self.ids.list_of_steps.add_widget(Label(text="Exponent Solved : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:exp_left_space] + '[color=33CAFF]' + evaled + '[/color]' + a[carrot+exp_right_space+1:],markup=True, font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text="Exponent Solved : " , font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:exp_left_space] + '[color=33CAFF]' + evaled + '[/color]' + a[carrot+exp_right_space+1:],markup=True, font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = '15sp', size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
                     
@@ -1893,14 +1897,14 @@ class PEMDAS(Screen):
                     print()
                     print()
                     print("Multiplication to Solve : ",a[:mult_left_space],Back.GREEN,mult_range,Style.RESET_ALL,a[found_mult+mult_right_space+1:])
-                    self.ids.list_of_steps.add_widget(Label(text="Multiplication Step : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:mult_left_space] + '[color=33CAFF]' + mult_range + '[/color]' + a[found_mult+mult_right_space+1:],markup=True , font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text="Multiplication Step : " , font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:mult_left_space] + '[color=33CAFF]' + mult_range + '[/color]' + a[found_mult+mult_right_space+1:],markup=True , font_size = '15sp', size_hint_y= None, height=100))
                     
                     print()
                     print("Multiplication Solved :   ", a[:mult_left_space],Back.GREEN,evaled,Style.RESET_ALL,a[found_mult+mult_right_space+1:])
-                    self.ids.list_of_steps.add_widget(Label(text="Multiplication Solved : ", font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:mult_left_space] + '[color=33CAFF]' + evaled + '[/color]'  + a[found_mult+mult_right_space+1:], markup=True, font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text="Multiplication Solved : ", font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:mult_left_space] + '[color=33CAFF]' + evaled + '[/color]'  + a[found_mult+mult_right_space+1:], markup=True, font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = '15sp', size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
                     a = replaced
@@ -1967,14 +1971,14 @@ class PEMDAS(Screen):
                     print()
                     print()
                     #print("Division to Solve : ",a[:div_left_space],Back.GREEN,div_range,Style.RESET_ALL,a[found_div+div_right_space+1:])
-                    self.ids.list_of_steps.add_widget(Label(text="Division Step : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:div_left_space] + '[color=33CAFF]' + div_range + '[/color]' + a[found_div+div_right_space+1:],markup=True, font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text="Division Step : " , font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:div_left_space] + '[color=33CAFF]' + div_range + '[/color]' + a[found_div+div_right_space+1:],markup=True, font_size = '15sp', size_hint_y= None, height=100))
                     
                     print()
                     #print("Division Solved :   ", a[:div_left_space],Back.GREEN,evaled,Style.RESET_ALL,a[found_div+div_right_space+1:])
-                    self.ids.list_of_steps.add_widget(Label(text="Division Solved : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:div_left_space] + '[color=33CAFF]' + evaled + '[/color]' + a[found_div+div_right_space+1:],markup=True, font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text="Division Solved : " , font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:div_left_space] + '[color=33CAFF]' + evaled + '[/color]' + a[found_div+div_right_space+1:],markup=True, font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = '15sp', size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
                     a = replaced
@@ -2038,14 +2042,14 @@ class PEMDAS(Screen):
                     print()
                     print()
                     #print("Addition to Solve :       ",a[:add_left_space],Back.GREEN,add_range,Style.RESET_ALL,a[found_add+add_right_space+1:])
-                    self.ids.list_of_steps.add_widget(Label(text="Addition Step : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:add_left_space] + '[color=33CAFF]' + add_range + '[/color]' + a[found_add+add_right_space+1:],markup=True , font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text="Addition Step : " , font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:add_left_space] + '[color=33CAFF]' + add_range + '[/color]' + a[found_add+add_right_space+1:],markup=True , font_size = '15sp', size_hint_y= None, height=100))
                     
                     print()
                     #print("Addition  Solved :        ",a[:add_left_space],Back.GREEN,evaled,Style.RESET_ALL,a[found_add+add_right_space+1:])
-                    self.ids.list_of_steps.add_widget(Label(text="Addition Solved : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:add_left_space] + '[color=33CAFF]' + evaled + '[/color]' + a[found_add+add_right_space+1:],markup=True , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text="Addition Solved : " , font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:add_left_space] + '[color=33CAFF]' + evaled + '[/color]' + a[found_add+add_right_space+1:],markup=True , font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = '15sp', size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
                     a = replaced
@@ -2113,14 +2117,14 @@ class PEMDAS(Screen):
                     print()
                     print()
                     #print("Subtraction to Solve :    ",a[:sub_left_space],Back.GREEN,sub_range,Style.RESET_ALL,a[found_sub+sub_right_space+1:])
-                    self.ids.list_of_steps.add_widget(Label(text="Subtraction Step : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:sub_left_space] + '[color=33CAFF]'  + sub_range + '[/color]' + a[found_sub+sub_right_space+1:],markup=True , font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text="Subtraction Step : " , font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:sub_left_space] + '[color=33CAFF]'  + sub_range + '[/color]' + a[found_sub+sub_right_space+1:],markup=True , font_size = '15sp', size_hint_y= None, height=100))
                     
                     print()
                     #print("Subtraction  Solved :     ",a[:sub_left_space],Back.GREEN,evaled,Style.RESET_ALL,a[found_sub+sub_right_space+1:])
-                    self.ids.list_of_steps.add_widget(Label(text="Subtraction Solved : " , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= a[:sub_left_space] + '[color=33CAFF]'  + evaled + '[/color]'  + a[found_sub+sub_right_space+1:],markup=True , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text="Subtraction Solved : " , font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= a[:sub_left_space] + '[color=33CAFF]'  + evaled + '[/color]'  + a[found_sub+sub_right_space+1:],markup=True , font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", font_size = '15sp', size_hint_y= None, height=100))
                     self.layouts.append(layout)
                     
                     a = replaced
@@ -2156,17 +2160,17 @@ class PEMDAS(Screen):
             print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             print()
             print("Answer:                     ",a)
-            self.ids.list_of_steps.add_widget(Label(text="Final Answer : ", font_size = 50, size_hint_y= None, height=100))
-            self.ids.list_of_steps.add_widget(Label(text= a, font_size = 50, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text="Final Answer : ", font_size = '15sp', size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= a, font_size = '15sp', size_hint_y= None, height=100))
 
 
         except Exception:
             try:
-                self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '15sp', size_hint_y= None, height=100))
                 self.layouts.append(layout)
                     
             except Exception:               
-                self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '15sp', size_hint_y= None, height=100))
                 self.layouts.append(layout)  
                 
 #Quadratic
@@ -2188,7 +2192,7 @@ Builder.load_string("""
             height: self.minimum_height
             
             Label:
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 text: "Quadratic Formula Calculator"
@@ -2204,7 +2208,7 @@ Builder.load_string("""
                 
                 Button:
                     text: "Menu"   
-                    font_size: 75
+                    font_size: '20sp'
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
@@ -2216,7 +2220,7 @@ Builder.load_string("""
                 Button:
                     id: steps
                     text: "Clear All"   
-                    font_size: 75
+                    font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
                     height: 200
@@ -2237,15 +2241,15 @@ Builder.load_string("""
                 height: self.minimum_height 
             
                 Label:
-                    height: 250
-                    font_size: 50
+                    height: 200
+                    font_size: '15sp'
                     size_hint_y: None
                     padding: 5,5
                     text: "ax\u00B2 + bx + c = 0"
                 
                 Label:
-                    height: 250
-                    font_size: 50
+                    height: 200
+                    font_size: '15sp'
                     size_hint_y: None
                     padding: 5,5
                     text:
@@ -2257,7 +2261,7 @@ Builder.load_string("""
                 id: a
                 text: a.text
                 multiline: False
-                font_size: 125
+                font_size: '35sp'
                 size_hint_y: None
                 hint_text: "a ="
                 height: 200
@@ -2270,7 +2274,7 @@ Builder.load_string("""
                 text: b.text
                 multiline: False
                 hint_text: "b ="
-                font_size: 125
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10          
@@ -2282,7 +2286,7 @@ Builder.load_string("""
                 text: c.text
                 multiline: False
                 hint_text: "c ="
-                font_size: 125
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10          
@@ -2298,7 +2302,7 @@ Builder.load_string("""
                 Button:
                     id: steps
                     text: "Calculate"   
-                    font_size: 75
+                    font_size: '20sp'
                     size_hint_y: None
                     background_color: 0, 1 , 0 , 1
                     height: 200
@@ -2361,31 +2365,31 @@ class Quadratic_Formula_Solver(Screen):
                 
                 
                 #POSITIVE
-                self.ids.list_of_steps.add_widget(Label(text= "x1" ,font_size = 50, size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text= "        " + b_out + " + \u221A(" + b + "\u00B2 - 4" + "(" + a + ")(" + c + "))" + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = 50, size_hint_y= None, height=300))
+                self.ids.list_of_steps.add_widget(Label(text= "x1" ,font_size = '15sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "        " + b_out + " + \u221A(" + b + "\u00B2 - 4" + "(" + a + ")(" + c + "))" + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = '15sp', size_hint_y= None, height=300))
                 
                 ac = " - " + str(4*float(a)*float(c))
                 ac = ac.replace("- -","+ ")
                 b = str(float(b)**2)
                 
-                self.ids.list_of_steps.add_widget(Label(text= "        " + b_out + " + \u221A(" + b + ac + ")" + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = 50, size_hint_y= None, height=300))
-                self.ids.list_of_steps.add_widget(Label(text= "        " + b_out + " + \u221A(" + str(square) + ")" + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = 50, size_hint_y= None, height=300))
+                self.ids.list_of_steps.add_widget(Label(text= "        " + b_out + " + \u221A(" + b + ac + ")" + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = '15sp', size_hint_y= None, height=300))
+                self.ids.list_of_steps.add_widget(Label(text= "        " + b_out + " + \u221A(" + str(square) + ")" + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = '15sp', size_hint_y= None, height=300))
                 
                 squared = str(square**.5)
                 print("squared",squared)
-                self.ids.list_of_steps.add_widget(Label(text= "        " + b_out + " + " + squared + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = 50, size_hint_y= None, height=300))
+                self.ids.list_of_steps.add_widget(Label(text= "        " + b_out + " + " + squared + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = '15sp', size_hint_y= None, height=300))
                 
                 numer = str(float(b_out) + float(squared))
-                self.ids.list_of_steps.add_widget(Label(text= "          " + numer + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = 50, size_hint_y= None, height=300))
+                self.ids.list_of_steps.add_widget(Label(text= "          " + numer + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = '15sp', size_hint_y= None, height=300))
                 
                 denom = str(2 * float(a))
-                self.ids.list_of_steps.add_widget(Label(text= "          " + numer + "\nx = -------------------------------" + "\n                     " + denom ,font_size = 50, size_hint_y= None, height=300))
+                self.ids.list_of_steps.add_widget(Label(text= "          " + numer + "\nx = -------------------------------" + "\n                     " + denom ,font_size = '15sp', size_hint_y= None, height=300))
                 
                 answera = str(float(numer) / float(denom))
                 print("answera",answera)
-                self.ids.list_of_steps.add_widget(Label(text="x1 = " + answera ,font_size = 50, size_hint_y= None, height=150))
+                self.ids.list_of_steps.add_widget(Label(text="x1 = " + answera ,font_size = '15sp', size_hint_y= None, height=100))
                 self.layouts.append(layout)
-                self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = 50, size_hint_y= None, height=150))
+                self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '15sp', size_hint_y= None, height=100))
                 
                 a = str(entry_list[0])
                 b_out = "-" + str(entry_list[1])
@@ -2394,43 +2398,43 @@ class Quadratic_Formula_Solver(Screen):
                 c = str(entry_list[2])
                 
                 #NEGATIVE
-                self.ids.list_of_steps.add_widget(Label(text= "x2" ,font_size = 50, size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text= "        " + b_out + " - \u221A(" + b + "\u00B2 - 4" + "(" + a + ")(" + c + "))" + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = 50, size_hint_y= None, height=300))
+                self.ids.list_of_steps.add_widget(Label(text= "x2" ,font_size = '15sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "        " + b_out + " - \u221A(" + b + "\u00B2 - 4" + "(" + a + ")(" + c + "))" + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = '15sp', size_hint_y= None, height=300))
                 
                 ac = " - " + str(4*float(a)*float(c))
                 ac = ac.replace("- -","+ ")
                 b = str(float(b)**2)
                 
-                self.ids.list_of_steps.add_widget(Label(text= "        " + b_out + " - \u221A(" + b +  ac + ")" + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = 50, size_hint_y= None, height=300))
-                self.ids.list_of_steps.add_widget(Label(text= "        " + b_out + " - \u221A(" + str(square) + ")" + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = 50, size_hint_y= None, height=300))
+                self.ids.list_of_steps.add_widget(Label(text= "        " + b_out + " - \u221A(" + b +  ac + ")" + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = '15sp', size_hint_y= None, height=300))
+                self.ids.list_of_steps.add_widget(Label(text= "        " + b_out + " - \u221A(" + str(square) + ")" + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = '15sp', size_hint_y= None, height=300))
                 
                 squared = str(square**.5)
                 print("squared",squared)
-                self.ids.list_of_steps.add_widget(Label(text= "        " + b_out + " - " + squared + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = 50, size_hint_y= None, height=300))
+                self.ids.list_of_steps.add_widget(Label(text= "        " + b_out + " - " + squared + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = '15sp', size_hint_y= None, height=300))
                 
                 numer = str(float(b_out) - float(squared))
-                self.ids.list_of_steps.add_widget(Label(text= "          " + numer + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = 50, size_hint_y= None, height=300))
+                self.ids.list_of_steps.add_widget(Label(text= "          " + numer + "\nx = -------------------------------" + "\n                   2(" + a + ")" ,font_size = '15sp', size_hint_y= None, height=300))
                 
                 denom = str(2 * float(a))
-                self.ids.list_of_steps.add_widget(Label(text= "          " + numer + "\nx = -------------------------------" + "\n                     " + denom ,font_size = 50, size_hint_y= None, height=300))
+                self.ids.list_of_steps.add_widget(Label(text= "          " + numer + "\nx = -------------------------------" + "\n                     " + denom ,font_size = '15sp', size_hint_y= None, height=300))
                 
                 answerb = str(float(numer) / float(denom))
                 print("answerb",answerb)
-                self.ids.list_of_steps.add_widget(Label(text="x1 = " + answerb ,font_size = 50, size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = 50, size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text="FINAL ANSWER ",font_size = 50, size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text="x1 = " + answera,font_size = 50, size_hint_y= None, height=100))
-                self.ids.list_of_steps.add_widget(Label(text="x2 = " + answerb,font_size = 50, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text="x1 = " + answerb ,font_size = '15sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ,font_size = '15sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text="FINAL ANSWER ",font_size = '15sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text="x1 = " + answera,font_size = '15sp', size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text="x2 = " + answerb,font_size = '15sp', size_hint_y= None, height=100))
                 self.layouts.append(layout)
                 
             
             else:
-                self.ids.list_of_steps.add_widget(Label(text= "Invalid Square Root" ,font_size = 50, size_hint_y= None, height=100))
+                self.ids.list_of_steps.add_widget(Label(text= "Invalid Square Root" ,font_size = '15sp', size_hint_y= None, height=100))
                 self.layouts.append(layout)
             
                             
         except Exception:
-            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '15sp', size_hint_y= None, height=100))
             self.layouts.append(layout)
 
 #Pythagorean STEPS
@@ -2452,7 +2456,7 @@ Builder.load_string("""
             height: self.minimum_height
             
             Label:
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -2469,7 +2473,7 @@ Builder.load_string("""
                 
                 Button:
                     text: "Menu"   
-                    font_size: 75
+                    font_size: '20sp'
                     size_hint_y: None
                     height: 200
                     padding: 10, 10
@@ -2481,7 +2485,7 @@ Builder.load_string("""
                 Button:
                     id: steps
                     text: "Clear All"   
-                    font_size: 75
+                    font_size: '20sp'
                     size_hint_y: None
                     background_color: 1, 0 , 0 , 1
                     height: 200
@@ -2493,7 +2497,7 @@ Builder.load_string("""
                         list_of_steps.clear_widgets()            
                     
             Label:
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10, 10
@@ -2504,7 +2508,7 @@ Builder.load_string("""
                 text: a.text
                 multiline: False
                 hint_text: "a ="
-                font_size: 125
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10
@@ -2516,7 +2520,7 @@ Builder.load_string("""
                 text: b.text
                 multiline: False
                 hint_text:"b ="
-                font_size: 125
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10          
@@ -2527,7 +2531,7 @@ Builder.load_string("""
                 text: c.text
                 multiline: False
                 hint_text:"c ="
-                font_size: 125
+                font_size: '35sp'
                 size_hint_y: None
                 height: 200
                 padding: 10          
@@ -2536,7 +2540,7 @@ Builder.load_string("""
             Button:
                 id: steps
                 text: "Calculate"   
-                font_size: 75
+                font_size: '20sp'
                 size_hint_y: None
                 background_color: 0, 1 , 0 , 1
                 height: 200
@@ -2602,19 +2606,19 @@ class Pythagorean(Screen):
                 
                 if str(entry_evaled) == str(c_squared):
                     print("entry_evaled = c")
-                    self.ids.list_of_steps.add_widget(Label(text= str(a) + "\u00B2"  + " + " + str(b) + "\u00B2" + " = " + str(c) + "\u00B2", font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= str(a) + "\u00B2"  + " + " + str(b) + "\u00B2" + " = " + str(c) + "\u00B2", font_size = '15sp', size_hint_y= None, height=100))
                     
                     a_squared = str(int(a)**2)
                     b_squared = str(int(b)**2)
                     
                     ab = str(int(a_squared) + int(b_squared))
                     
-                    self.ids.list_of_steps.add_widget(Label(text= str(a_squared) + " + " + str(b_squared) + " = " + str(c_squared), font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= str(ab) + " = " + str(c_squared), font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= str(a_squared) + " + " + str(b_squared) + " = " + str(c_squared), font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= str(ab) + " = " + str(c_squared), font_size = '15sp', size_hint_y= None, height=100))
 
                 else:
                     print("entry_evaled does not = c!!!!!!!")
-                    self.ids.list_of_steps.add_widget(Label(text= "Input does not equate to triangle!", font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "Input does not equate to triangle!", font_size = '15sp', size_hint_y= None, height=100))
                     self.layouts.append(layout)
             
             # 3 + b = 5 OR a + 4 = 5
@@ -2629,96 +2633,96 @@ class Pythagorean(Screen):
                     print()
                     print("Solve for a!")
                     
-                    self.ids.list_of_steps.add_widget(Label(text= str(a) + "\u00B2"  + " + " + str(b) + "\u00B2" + " = c\u00B2", font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= str(a_squared)  + " + " + str(b_squared) + " = c\u00B2", font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= str(a) + "\u00B2"  + " + " + str(b) + "\u00B2" + " = c\u00B2", font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= str(a_squared)  + " + " + str(b_squared) + " = c\u00B2", font_size = '15sp', size_hint_y= None, height=100))
 
                     a_plus_b = int(a_squared) + int(b_squared)
                     print("a_plus_b = ",a_plus_b)
                     
-                    self.ids.list_of_steps.add_widget(Label(text= "c\u00B2" + " = " + str(a_plus_b) , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "\u221a(" + " c\u00B2)" + " = " + "\u221a(" + str(a_plus_b) + ")" , font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "c\u00B2" + " = " + str(a_plus_b) , font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "\u221a(" + " c\u00B2)" + " = " + "\u221a(" + str(a_plus_b) + ")" , font_size = '15sp', size_hint_y= None, height=100))
 
                     a_plus_b_root = str(float(a_plus_b)**.5)
                     print("a_plus_b_root = ",a_plus_b_root)
 
                     if a_plus_b_root[-2] == "." and a_plus_b_root[-1] == "0":
-                        self.ids.list_of_steps.add_widget(Label(text= "c = " + format(float(a_plus_b_root),","), font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= "c = " + format(float(a_plus_b_root),","), font_size = '15sp', size_hint_y= None, height=100))
                         self.layouts.append(layout)
                     else:
-                        self.ids.list_of_steps.add_widget(Label(text= "c = " + "\u221a(" + format(float(a_plus_b),",") + ")", font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= "c = " + "\u221a(" + format(float(a_plus_b),",") + ")", font_size = '15sp', size_hint_y= None, height=100))
                         self.layouts.append(layout)
                                         
                     if a_plus_b_root == "0.0":
-                        self.ids.list_of_steps.add_widget(Label(text= "0.0 cannot form a valid line for triangle" ,font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= "0.0 cannot form a valid line for triangle" ,font_size = '15sp', size_hint_y= None, height=100))
                     
                 elif int(entry[0]) > 0 and int(entry[2]) > 0:
                     print("a and c are valid")
                     print()
                     print("Solve for b!")
                     
-                    self.ids.list_of_steps.add_widget(Label(text= str(a) + "\u00B2"  + " + " + "b\u00B2" + " = " + str(c) + "\u00B2", font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "b\u00B2" + " = " + str(c) + "\u00B2" + " - " + str(a) + "\u00B2" , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "b\u00B2" + " = " + str(c_squared) + " - " + str(a_squared) , font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= str(a) + "\u00B2"  + " + " + "b\u00B2" + " = " + str(c) + "\u00B2", font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "b\u00B2" + " = " + str(c) + "\u00B2" + " - " + str(a) + "\u00B2" , font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "b\u00B2" + " = " + str(c_squared) + " - " + str(a_squared) , font_size = '15sp', size_hint_y= None, height=100))
                     
                     c_minus_a = int(c_squared) - int(a_squared)
                     print("c_minus_a = ",c_minus_a)
                     
-                    self.ids.list_of_steps.add_widget(Label(text= "b\u00B2" + " = " + str(c_minus_a) , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "\u221a(" + " b\u00B2)" + " = " + "\u221a(" + str(c_minus_a) + ")" , font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "b\u00B2" + " = " + str(c_minus_a) , font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "\u221a(" + " b\u00B2)" + " = " + "\u221a(" + str(c_minus_a) + ")" , font_size = '15sp', size_hint_y= None, height=100))
                     
                     c_minus_a_root = str(float(c_minus_a)**.5)
                     print("c_minus_a_root = ",c_minus_a_root)
 
                     if c_minus_a_root[-2] == "." and c_minus_a_root[-1] == "0":
-                        self.ids.list_of_steps.add_widget(Label(text= "b = " + format(float(c_minus_a_root),","), font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= "b = " + format(float(c_minus_a_root),","), font_size = '15sp', size_hint_y= None, height=100))
                         self.layouts.append(layout)
                     else:
-                        self.ids.list_of_steps.add_widget(Label(text= "b = " + "\u221a(" + format(float(c_minus_a),",") + ")", font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= "b = " + "\u221a(" + format(float(c_minus_a),",") + ")", font_size = '15sp', size_hint_y= None, height=100))
                         self.layouts.append(layout)
                     
                     if c_minus_a_root == "0.0":
-                        self.ids.list_of_steps.add_widget(Label(text= "0.0 cannot form a valid line for triangle" ,font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= "0.0 cannot form a valid line for triangle" ,font_size = '15sp', size_hint_y= None, height=100))
                     
                 elif int(entry[1]) > 0 and int(entry[2]) > 0:
                     print("b and c are valid")
                     print()
                     print("Solve for a!")
                     
-                    self.ids.list_of_steps.add_widget(Label(text= "a\u00B2"  + " + " + str(b) + "\u00B2" + " = " + str(c) + "\u00B2", font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "a\u00B2" + " = " + str(c) + "\u00B2" + " - " + str(b) + "\u00B2" , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "a\u00B2" + " = " + str(c_squared) + " - " + str(b_squared) , font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "a\u00B2"  + " + " + str(b) + "\u00B2" + " = " + str(c) + "\u00B2", font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "a\u00B2" + " = " + str(c) + "\u00B2" + " - " + str(b) + "\u00B2" , font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "a\u00B2" + " = " + str(c_squared) + " - " + str(b_squared) , font_size = '15sp', size_hint_y= None, height=100))
                     
                     c_minus_b = int(c_squared) - int(b_squared)
                     print("c_minus_b = ",c_minus_b)
                     
-                    self.ids.list_of_steps.add_widget(Label(text= "a\u00B2" + " = " + str(c_minus_b) , font_size = 50, size_hint_y= None, height=100))
-                    self.ids.list_of_steps.add_widget(Label(text= "\u221a(" + " a\u00B2)" + " = " + "\u221a(" + str(c_minus_b) + ")" , font_size = 50, size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "a\u00B2" + " = " + str(c_minus_b) , font_size = '15sp', size_hint_y= None, height=100))
+                    self.ids.list_of_steps.add_widget(Label(text= "\u221a(" + " a\u00B2)" + " = " + "\u221a(" + str(c_minus_b) + ")" , font_size = '15sp', size_hint_y= None, height=100))
                     
                     c_minus_b_root = str(float(c_minus_b)**.5)
                     print("c_minus_b_root = ",c_minus_b_root)
 
                     if c_minus_b_root[-2] == "." and c_minus_b_root[-1] == "0":
-                        self.ids.list_of_steps.add_widget(Label(text= "a = " + format(float(c_minus_b_root),","), font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= "a = " + format(float(c_minus_b_root),","), font_size = '15sp', size_hint_y= None, height=100))
                         self.layouts.append(layout)
                     else:
-                        self.ids.list_of_steps.add_widget(Label(text= "a = " + "\u221a(" + format(float(c_minus_b),",") + ")", font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= "a = " + "\u221a(" + format(float(c_minus_b),",") + ")", font_size = '15sp', size_hint_y= None, height=100))
                         self.layouts.append(layout)
                         
                     if c_minus_b_root == "0.0":
-                        self.ids.list_of_steps.add_widget(Label(text= "0.0 cannot form a valid line for triangle" ,font_size = 50, size_hint_y= None, height=100))
+                        self.ids.list_of_steps.add_widget(Label(text= "0.0 cannot form a valid line for triangle" ,font_size = '15sp', size_hint_y= None, height=100))
                     
                 
             else:
                 print("Invalid length")                
             
         except Exception:
-            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = 50, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "Invalid Input" ,font_size = '15sp', size_hint_y= None, height=100))
             self.layouts.append(layout)
             
         
         if entry[0].count("-") > 0 or entry[1].count("-") > 0 or entry[2].count("-") > 0:
             print("entry neg: ",entry)
-            self.ids.list_of_steps.add_widget(Label(text= "Cannot have negative sides of a triangle!" ,font_size = 50, size_hint_y= None, height=100))
+            self.ids.list_of_steps.add_widget(Label(text= "Cannot have negative sides of a triangle!" ,font_size = '15sp', size_hint_y= None, height=100))
             self.layouts.append(layout)
        	 
    	 
