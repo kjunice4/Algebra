@@ -315,7 +315,7 @@ Builder.load_string("""
                 text: y.text
                 multiline: False
                 hint_text: "f(x) ="
-                font_size: '35sp'
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10
@@ -325,7 +325,7 @@ Builder.load_string("""
                 text: domain.text
                 multiline: False
                 hint_text:"Domain = min,max,sequence"
-                font_size: '35sp'
+                font_size: '20sp'
                 size_hint_y: None
                 height: 200
                 padding: 10  
